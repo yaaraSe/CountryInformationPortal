@@ -1,0 +1,49 @@
+<div class="form-container">
+  <form [formGroup]="countryForm" class="country-form">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Capital</mat-label>
+      <input matInput formControlName="capital" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Region</mat-label>
+      <input matInput formControlName="region" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Sub Region</mat-label>
+      <input matInput formControlName="subRegion" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Population</mat-label>
+      <input matInput formControlName="population" />
+    </mat-form-field>
+
+    <!-- Displaying the image -->
+    <div class="image-container">
+      <img
+        [src]="countryForm.get('flags')?.value.png"
+        [alt]="countryForm.get('flags')?.value.alt"
+        width="100%"
+      />
+    </div>
+
+    <button
+      mat-raised-button
+      type="submit"
+      class="submit-button"
+      (click)="this.editCountry(countryForm.value)"
+    >
+      Edit
+    </button>
+  </form>
+</div>
+<!-- <mat-card>
+  <mat-card-content>Simple card</mat-card-content>
+</mat-card> -->

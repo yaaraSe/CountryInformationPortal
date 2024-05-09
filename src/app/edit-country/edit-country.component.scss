@@ -1,0 +1,18 @@
+.form-container {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+  margin-top: 50px;
+}
+
+.country-form {
+  width: 300px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.submit-button {
+  margin-top: 16px;
+}
