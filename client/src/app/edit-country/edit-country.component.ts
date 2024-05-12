@@ -114,8 +114,8 @@ export class EditCountryComponent implements OnInit {
       official: this.countryForm.value.official,
       common: this.countryForm.value.name,
     };
-    updatedCountry.region = this.countryForm.get('region')?.value;
-    updatedCountry.subRegion = this.countryForm.get('subRegion')?.value;
+    updatedCountry.region = this.countryForm.value.region;
+    updatedCountry.subRegion = this.countryForm.value.subRegion;
     updatedCountry.flags = {
       png: this.countryForm.value.flags.png,
       alt: this.countryForm.value.flags.alt,
