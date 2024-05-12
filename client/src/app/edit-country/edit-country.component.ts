@@ -111,14 +111,14 @@ export class EditCountryComponent implements OnInit {
   editCountry(updatedCountry: ICountry) {
     console.log(this.countryId);
     updatedCountry.name = {
-      official: this.countryForm.value.official,
-      common: this.countryForm.value.name,
+      official: this.countryForm.get('official')?.value,
+      common: this.countryForm.get('name')?.value,
     };
-    updatedCountry.region = this.countryForm.value.region;
-    updatedCountry.subRegion = this.countryForm.value.subRegion;
+    updatedCountry.region = this.countryForm.get('region')?.value;
+    updatedCountry.subRegion = this.countryForm.get('subRegion')?.value;
     updatedCountry.flags = {
-      png: this.countryForm.value.flags.png,
-      alt: this.countryForm.value.flags.alt,
+      png: this.countryForm.get('flags')?.value.png,
+      alt: this.countryForm.get('flags')?.value.alt,
     };
     updatedCountry.id = this.countryId;
 
