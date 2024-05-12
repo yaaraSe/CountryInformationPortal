@@ -8,6 +8,13 @@
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Capital</mat-label>
       <input matInput formControlName="capital" />
+      <mat-error
+        *ngIf="
+          countryForm.get('capital')?.invalid &&
+          countryForm.get('capital')?.touched
+        "
+        >Capital is required</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="form-field">
@@ -23,6 +30,14 @@
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Population</mat-label>
       <input matInput formControlName="population" />
+      <mat-error
+        *ngIf="
+          countryForm.get('population')?.invalid &&
+          countryForm.get('population')?.touched
+        "
+      >
+        Population is required
+      </mat-error>
     </mat-form-field>
 
     <!-- Displaying the image -->

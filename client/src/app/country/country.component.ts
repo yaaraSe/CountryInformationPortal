@@ -27,7 +27,7 @@ import { Router } from '@angular/router';
   templateUrl: './country.component.html',
   styleUrl: './country.component.scss',
 })
-export class CountryComponent implements AfterViewInit {
+export class CountryComponent implements OnInit {
   http = inject(HttpClient);
   countryApi = inject(CountryApiService);
   countries$!: Observable<ICountry[]>;
@@ -52,7 +52,7 @@ export class CountryComponent implements AfterViewInit {
     this.dataSource = new MatTableDataSource<ICountry>();
   }
 
-  ngAfterViewInit() {
+  ngOnInit() {
     this.countries$.subscribe((countries) => {
       this.dataSource.data = countries;
       this.dataSource.paginator = this.paginator;
