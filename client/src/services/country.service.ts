@@ -14,11 +14,11 @@ export class CountryApiService {
       .get<ICountry[]>('https://localhost:7160/api/Country')
       .pipe();
   }
-  updateCountry(
-    countryId: string,
-    updatedCountry: ICountry
-  ): Observable<ICountry> {
-    const url = `https://localhost:7160/api/Country/${countryId}`;
-    return this.http.put<ICountry>(url, updatedCountry);
-  }
+  // updateCountry(
+  //   countryId: string,
+  //   updatedCountry: ICountry
+  // ): Observable<ICountry> {
+  //   const url = `https://localhost:7160/api/Country/${countryId}`;
+  //   return this.http.put<ICountry>(url, updatedCountry);
+  // }
 }
