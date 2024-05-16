@@ -49,9 +49,8 @@ export class EditCountryComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private store: Store<AppState>,
-    private router: Router // הוסף כאן את ה-router
+    private router: Router
   ) {
-    // this.store.dispatch(CountryActions.loadCountry());
     this.countries$! = this.store.select(countrySelectors.selectAllCountries);
     this.countryForm = this.fb.group({
       name: [''],
@@ -59,7 +58,7 @@ export class EditCountryComponent implements OnInit {
       capital: ['', Validators.required],
       region: [''],
       subRegion: [''],
-      population: ['', [Validators.required, Validators.min(0)]], // Required and min value validation for population field
+      population: ['', [Validators.required, Validators.min(0)]],
       flags: [''],
     });
   }
@@ -87,7 +86,7 @@ export class EditCountryComponent implements OnInit {
             this.countryId = id;
             return this.countries$.pipe(take(1));
           }
-          return EMPTY; // handle case where no ID is provided
+          return EMPTY;
         })
       )
       .subscribe((countries) => {

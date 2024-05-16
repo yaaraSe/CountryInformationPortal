@@ -28,8 +28,6 @@ import { Router } from '@angular/router';
   styleUrl: './country.component.scss',
 })
 export class CountryComponent implements OnInit {
-  http = inject(HttpClient);
-  countryApi = inject(CountryApiService);
   countries$!: Observable<ICountry[]>;
   error$!: Observable<string | null>;
   displayedColumns: string[] = [
@@ -38,7 +36,6 @@ export class CountryComponent implements OnInit {
     'region',
     'subRegion',
     'population',
-    'flags',
     'edit',
   ];
   dataSource: MatTableDataSource<ICountry>;

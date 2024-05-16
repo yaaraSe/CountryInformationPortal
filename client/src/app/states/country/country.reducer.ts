@@ -13,7 +13,6 @@ export const initialCountryState: CountryState = {
 
 export const CountryReducer = createReducer(
   initialCountryState,
-  // eslint-disable-next-line @ngrx/on-function-explicit-return-type
   on(CountryActions.loadCountrySuccess, (state, { countries }) => ({
     ...state,
     countries,
